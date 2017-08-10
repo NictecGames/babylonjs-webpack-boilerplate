@@ -30,13 +30,13 @@ class Game {
     this._light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0,1,0), this._scene)
 
     // create a built-in "sphere" shape; with 16 segments and diameter of 2
-    let sphere = BABYLON.MeshBuilder.CreateSphere('sphere1', {segments: 16, diameter: 2}, this._scene)
+    const sphere = BABYLON.MeshBuilder.CreateSphere('sphere1', {segments: 16, diameter: 2}, this._scene)
 
     // move the sphere upward 1/2 of its height
     sphere.position.y = 1
 
     // create a built-in "ground" shape
-    let ground = BABYLON.MeshBuilder.CreateGround('ground1', {width: 6, height: 6, subdivisions: 2}, this._scene)
+    const ground = BABYLON.MeshBuilder.CreateGround('ground1', {width: 6, height: 6, subdivisions: 2}, this._scene)
   }
 
   animate (): void {
@@ -54,7 +54,7 @@ class Game {
 
 window.addEventListener('DOMContentLoaded', () => {
   // Create the game using the 'renderCanvas'
-  let game = new Game('renderCanvas')
+  const game = new Game('renderCanvas')
 
   // Create the scene
   game.createScene()
